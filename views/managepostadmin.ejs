@@ -1,0 +1,56 @@
+<% include header %>
+<% include adminnavigator %>
+
+<div id="page">
+    <center>
+        <h2>view all Posts!!!!!</h2>
+<table border='2'>
+<tr align='center'>
+<th>Title</th>
+<th>Description</th>
+<th>Image1</th>
+<th>Image2</th>
+<th>Image3</th>
+<th>Address</th>
+
+<th>Block/unblock</th>
+<th>Action</th>
+</tr>
+<%
+for(i=0;i<data.length;i++){
+%>
+<tr align='center'>
+<td><%= data[i].title %></td>
+<td><%= data[i].description %></td>
+<td><img src='../uploads/<%=data[i].image1%>' height='50' width='70'/></td>
+<td><img src='../uploads/<%=data[i].image2%>' height='50' width='70'/></td>
+<td><img src='../uploads/<%=data[i].image3%>' height='50' width='70'/></td>
+<td><%= data[i].address %></td>
+
+
+
+<% if(data[i].vstatus=='1'){ %>
+<td>
+<a href='/admin/validatepost?block=<%=data[i].pid%>' title='Block post'>
+<img src='../images/block.jpeg' height='30' width='50'/>
+</a>
+</td>
+<% } else { %>
+<td>
+<a href='/admin/validatepost?unblock=<%=data[i].pid%>' title='UnBlock post'>
+<img src='../images/unblock.png' height='30' width='50'/>
+</a>
+</td>
+<% } %>
+<td>
+<a href='/admin/validatepost?delete=<%=data[i].pid%>' title='Delete Post'>
+<button><img src='../images/delete.jpeg' height='30' width='50'/><button>
+</a>
+</td>
+</tr>
+<% } %>
+</table>
+</center>
+
+</div>
+<% include footer %>

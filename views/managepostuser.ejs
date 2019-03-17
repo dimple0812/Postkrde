@@ -1,0 +1,51 @@
+<% include header %>
+<% include usernavigator %>
+
+<div id="page">
+    <center>
+        <h2>view all posts!!!!!</h2>
+<table border='2'>
+<tr align='center'>
+<th>pid</th>
+<th>title</th>
+<th>catnm</th>
+<th>description</th>
+<th>price</th>
+<th>image1</th>
+<th>image2</th>
+<th>image3</th>
+<th>update</th>
+<th>delete</th>
+</tr>
+<%
+for(i=0;i<data.length;i++){
+%>
+<tr align='center'>
+<td><%= data[i].pid %></td>
+<td><%= data[i].title %></td>
+<td><%= data[i].catnm %></td>
+<td><%= data[i].description %></td>
+<td><%= data[i].price %></td>
+<td><%= data[i].image1 %></td>
+<td><%= data[i].image2 %></td>
+<td><%= data[i].image3 %></td>
+<td>
+<a href='/users/manageposts?update=<%=data[i].pid%>' title='update post'>
+<button><img src='../images/update.png' height='30' width='50'/><button>
+</a>
+</td>
+
+
+
+<td>
+<a href='/users/manageposts?delete=<%=data[i].pid%>' title='Delete post'>
+<button><img src='../images/delete.jpeg' height='30' width='50'/><button>
+</a>
+</td>
+</tr>
+<% } %>
+</table>
+</center>
+
+</div>
+<% include footer %>

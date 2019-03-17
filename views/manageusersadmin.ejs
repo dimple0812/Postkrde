@@ -1,0 +1,56 @@
+<% include header %>
+<% include adminnavigator %>
+
+<div id="page">
+    <center>
+        <h2>view all registered candidate's list!!!!!</h2>
+<table border='2'>
+<tr align='center'>
+<th>RegId</th>
+<th>Name</th>
+<th>Email</th>
+<th>Address</th>
+<th>City</th>
+<th>Mobile</th>
+<th>Gender</th>
+<th>Block/unblock</th>
+<th>Action</th>
+</tr>
+<%
+for(i=0;i<data.length;i++){
+%>
+<tr align='center'>
+<td><%= data[i].regid %></td>
+<td><%= data[i].nm %></td>
+<td><%= data[i].email %></td>
+<td><%= data[i].address %></td>
+<td><%= data[i].city %></td>
+<td><%= data[i].mno %></td>
+<td><%= data[i].gender %></td>
+
+
+<% if(data[i].vstatus=='1'){ %>
+<td>
+<a href='/admin/validateusers?block=<%=data[i].regid%>' title='Block User'>
+<img src='../images/block.jpeg' height='30' width='50'/>
+</a>
+</td>
+<% } else { %>
+<td>
+<a href='/admin/validateusers?unblock=<%=data[i].regid%>' title='UnBlock User'>
+<img src='../images/unblock.png' height='30' width='50'/>
+</a>
+</td>
+<% } %>
+<td>
+<a href='/admin/validateusers?delete=<%=data[i].regid%>' title='Delete User'>
+<button><img src='../images/delete.jpeg' height='30' width='50'/><button>
+</a>
+</td>
+</tr>
+<% } %>
+</table>
+</center>
+
+</div>
+<% include footer %>

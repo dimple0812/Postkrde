@@ -1,0 +1,54 @@
+<% include header %>
+<% include usernavigator%>
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>FeedBacks!!!!!!!!!!!!!!!</h2>
+                                <p><%=result%></p>
+<form method="POST" action="/users/feedback" enctype="multipart/form-data">
+                    <table  cellspacing='10'>
+                            
+
+                        <tr>
+                            <td>Feedback</td>
+                            <td>
+                            <textarea name="feedback" rows="10" cols="32"></textarea>    
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">
+                               <input type="submit" name="s" value="submit feedback" />     
+                            </td>
+                        </tr>
+                    </table>        
+                </form>
+				
+			</div>
+			
+			
+			<br class="clearfix" />
+		</div>
+            
+            
+            
+            
+            
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Our Blog</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+					
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<% include footer %>

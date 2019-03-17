@@ -1,0 +1,36 @@
+<% include header %>
+<% include adminnavigator %>
+
+<div id="page">
+    <center>
+        <h2>view all subcategories!!!!!</h2>
+<table border='2'>
+<tr align='center'>
+<th>subcatid</th>
+<th>catnm</th>
+<th>subcatnm</th>
+<th>subcatimg</th>
+
+<th>Action</th>
+</tr>
+<%
+for(i=0;i<data.length;i++){
+%>
+<tr align='center'>
+<td><%= data[i].subcatid %></td>
+<td><%= data[i].catnm %></td>
+<td><%= data[i].subcatnm %></td>
+
+<td><img src='../uploads/<%=data[i].catimgnm%>' height='50' width='70'/></td>
+<td>
+<a href='/admin/deletesubcatadmin?delete=<%=data[i].subcatid%>&subcatnm=<%=data[i].subcatnm%>' title='Delete subcategory'>
+<button><img src='../images/delete.jpeg' height='30' width='50'/><button>
+</a>
+</td>
+</tr>
+<% } %>
+</table>
+</center>
+
+</div>
+<% include footer %>

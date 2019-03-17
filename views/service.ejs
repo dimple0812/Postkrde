@@ -1,0 +1,62 @@
+<%include head%>
+<%include navigator%>
+
+    <div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Paynow</h2>
+
+
+    <img src="../uploads/dummy.png"/>
+    <br><br>
+    Name: <%=item_name%>
+    <br><br>
+    Price: <%=item_price%>
+    <br><br>
+    <form action="<%=paypalURL%>" method="post">
+        <!-- Identify your business so that you can collect the payments. -->
+        <input type="hidden" name="business" value="<%=paypalID%>">
+        
+        <!-- Specify a Buy Now button. -->
+        <input type="hidden" name="cmd" value="_xclick">
+        
+        <!-- Specify details about the item that buyers will purchase. -->
+        <input type="hidden" name="item_name" value="<%=item_name%>">
+        <input type="hidden" name="item_number" value="<%=item_id%>">
+        <input type="hidden" name="amount" value="<%=item_price%>">
+        <input type="hidden" name="currency_code" value="USD">
+        
+        <!-- Specify URLs -->
+        <input type='hidden' name='cancel_return' value='http://localhost:3000/cancel'>
+        <input type='hidden' name='return' value='http://localhost:3000/success?item_name=<%=item_name%>&item_price=<%=item_price%>&item_id=<%=item_id%>'>
+        
+        <!-- Display the payment button. -->
+        <input type="image" name="submit" border="0"
+        src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="PayPal - The safer, easier way to pay online">
+        <img alt="" border="0" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+        </form>
+
+				
+			</div>
+			
+			<br class="clearfix" />
+		</div>
+            
+		<div id="sidebar">
+			<div class="box">
+				<h3>socail contacts</h3>
+				<ul class="list">
+					<li class="first"><a href="#">facebook</a></li>
+					<li><a href="#">twitter</a></li>
+					<li><a href="#">blogs</a></li>
+					<li><a href="#">instagram</a></li>
+					<li class="last"><a href="#">snapchat</a></li>
+				</ul>
+			</div>
+		
+		</div>
+		<br class="clearfix" />
+	</div>
+    
+</div>
+<%include footer%>

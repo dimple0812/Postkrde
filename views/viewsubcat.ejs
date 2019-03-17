@@ -1,0 +1,70 @@
+ <% include header %>            
+ <% include nav %>     
+ <% include slider %>     
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>subcategories of <%=catnm.cnm%></h2>
+<style>
+#mymain
+{
+height:450px;
+width:600px;
+
+
+}
+#mymainpart
+{
+height:150px;
+width:200px;
+
+float:left;
+}
+</style>
+                                
+
+<div id='mymain'>
+<% for(i=0;i<data.length;i++){%>
+<a href='/viewpost?scnm=<%=data[i].subcatnm%>'>
+<div id='mymainpart'>
+<center>
+
+<img src='uploads/<%= data[i].catimgnm%>' height='100' width='150' >
+<br>
+<b><%= data[i].subcatnm %></b>
+</center>
+</a>
+</div>
+
+<%}%>
+</div>
+				
+			</div>
+			
+			
+			<br class="clearfix" />
+		</div>
+            
+            
+            
+            
+            
+		<div id="sidebar">
+			<div class="box">
+				<h3>category list</h3>
+				<ul class="list">
+					<% for(i=0;i<catlist.length;i++) { %>
+					<li><a href="/viewsubcat?cnm=<%= catlist[i].catnm %>"><%= catlist[i].catnm%></a></li>
+					<%}%>
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<% include footer %>     
+    
+    
+    

@@ -1,0 +1,26 @@
+<% include header %>
+<% include adminnavigator %>
+
+<div id="page">
+    <center>
+        <h2>view all feedbacks!!!!!</h2>
+<table border='2'>
+<tr align='center'>
+<th>Fid</th>
+<th>Feedback</th>
+<th>uid</th>
+</tr>
+<%
+for(i=0;i<data.length;i++){
+%>
+<tr align='center'>
+<td><%= data[i].fid %></td>
+<td><%= data[i].feedback %></td>
+<td><%= data[i].uid %></td>
+</tr>
+<% } %>
+</table>
+</center>
+
+</div>
+<% include footer %>

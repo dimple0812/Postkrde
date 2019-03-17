@@ -1,0 +1,57 @@
+<% include header %>            
+ <% include nav %>     
+ <% include slider %>     
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Login page</h2>
+<form method="POST" action="/login">
+<table cellspacing=20>
+
+<td>Email</td>
+<td><input type="email" name="email" value="<%=d.u%>"/></td>
+</tr>
+<tr>
+<td>password</td>
+<td><input type="password" name="pass" value="<%=d.p%>"/></td>
+</tr>
+<tr>
+<td><input type="submit" value="LOG IN" name="s"></td>
+</tr>
+<tr>
+<td><input type="checkbox" name="chk" value="remember" <%if(d.s){%>
+checked
+<%}%>
+>Remember me?!!!</td>
+</tr>
+</table>
+</form>
+			</div>
+			
+			
+			<br class="clearfix" />
+		</div>
+            
+            
+            
+            
+            
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Our Blog</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+					
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<% include footer %>     
+    

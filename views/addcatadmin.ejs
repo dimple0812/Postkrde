@@ -1,0 +1,29 @@
+<% include header %>
+<% include adminnavigator %>
+
+    <div id="page">
+<center>
+<%= r %>
+				
+<h2>Add Categories</h2>
+<form method="POST" action="/admin/addcatadmin" enctype='multipart/form-data'>
+<table cellspacing=20>
+
+<td>Category Name</td>
+<td><input type="text" name="catnm"/></td>
+</tr>
+<tr>
+<td>Category Icon</td>
+<td><input type="file" name="catimg"/></td>
+</tr>
+<tr>
+<td><input type="submit" value="Add Category" name="s"></td>
+</tr>
+
+</table>
+</form>
+				
+	<center>
+    
+</div>
+<%include footer%>

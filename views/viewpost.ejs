@@ -1,0 +1,70 @@
+<% include header %>
+<% include nav %>
+<% include slider %>
+<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Adds Category: <%=scatnm.scnm%></h2>
+                                <h3>Total adds :<%=data.length%></h3>
+<% for(i=0;i<data.length;i++) {%>
+<table style='border:3px solid gray; border-radius:20px;' height='200' width='600'>
+<tr>
+<td rowspan='3' width='60%'>
+<center>
+<img src='../uploads/<%=data[i].image1%>' height='100' width='150'>
+</center>
+</td>
+<td><b>Title : <%=data[i].title%></b></td>
+</tr>
+<tr>
+<td><b>Price : &#8377;<%= data[i].price %><b></td>
+</tr>
+<tr>
+<td><b>City : <%= data[i].city %><b></td>
+</tr>
+
+</table>
+<br><br>
+<% } %>
+				
+			</div>
+			
+			
+			<br class="clearfix" />
+		</div>
+            
+            
+            
+            
+            
+		<div id="sidebar">
+			<div class="box">
+				<h3>Ads filter</h3>
+                                Filter by City:  
+                                <br><br>
+                                <form>
+                                <input type='hidden' name='scnm' value='<%=scatnm.scnm%>'/>
+                                <select name='city'>
+                                <option>Select City</option>
+                                <option>Indore</option>
+                                <option>Bhopal</option>
+                                <option>Ujjain</option>
+                                </select>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type='submit' value='search'>
+                                
+                                </form>
+				
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+
+
+
+ 
+
+
+<% include footer %>

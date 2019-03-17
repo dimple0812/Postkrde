@@ -1,0 +1,74 @@
+ <% include header %>            
+ <% include nav %>     
+ <% include slider %>     
+
+<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Welcome to PostKrde.com</h2>
+<style>
+#mymain
+{
+height:450px;
+width:600px;
+
+
+}
+#mymainpart
+{
+height:150px;
+width:200px;
+
+float:left;
+}
+</style>
+                                
+
+<div id='mymain'>
+<% for(i=0;i<data.length;i++){%>
+<a href='/viewsubcat?cnm=<%= data[i].catnm %>'>
+<div id='mymainpart'>
+<center>
+
+<img src='uploads/<%= data[i].catimgnm%>' height='100' width='150' >
+<br>
+<b><%= data[i].catnm %></b>
+</center>
+</a>
+</div>
+
+<%}%>
+</div>
+				<p>
+					This is <strong>Big Business 2.0</strong>, a free and fully standards-compliant CSS website template by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. The pictures in this template are from <a href="http://fotogrph.com/">Fotogrph</a>. This free CSS template is released under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so you're pretty much free to do whatever you want with it (even use it commercially) provided you credit us in some way. Have fun :)
+				</p>
+			</div>
+			
+			
+			<br class="clearfix" />
+		</div>
+            
+            
+            
+            
+            
+		<div id="sidebar">
+			<div class="box">
+				<h3>Social Links</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Facebook</a></li>
+					<li><a href="#">Our Blog</a></li>
+					<li><a href="#">Twitter</a></li>
+					<li><a href="#">LinkedIn</a></li>
+					
+				</ul>
+			</div>
+			
+		</div>
+		<br class="clearfix" />
+	</div>
+</div>
+<% include footer %>     
+    
+    
+    
